@@ -1,0 +1,8 @@
+
+.link-edit{
+    text-decoration: none !important;
+    color: rgb(70, 13, 168) !important;
+}
+.link-edit:hover{
+    color: rgb(41, 6, 102) !important;
+}
