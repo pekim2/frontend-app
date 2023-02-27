@@ -2,6 +2,11 @@
     color: red;
 }
 
+p {
+  margin-bottom: .5em !important; /*consertar o scss*/
+}
+
+
 
 input {
     border-radius: 15px;
@@ -13,57 +18,142 @@ input {
    outline: none;
    background-color: rgb(228, 228, 228);
   }
-  
-  .botao-comprar{
+
+  input[type=text]{
+    padding-left: 1em;
+    width: 200px;
+  }
+
+  .botao-voltar{
     border: none;
     color: white;
-    background-color: rgb(187, 0, 255);
+    background-color: rgb(101, 13, 133);
     width: 150px;
     height: 60px;
     transition: .5s;
     border-radius: 10px;
+    font-size: 1.4em;
   }
 
-  .botao-comprar:hover{
-    background-color: rgb(86, 0, 147);
-    border-radius: 20px;
-  }
+ .botao-edit{
+  border: none;
+    color: white;
+    background-color: rgb(255, 0, 230);
+    width: 150px;
+    height: 60px;
+    transition: .5s;
+    border-radius: 10px;
+    font-size: 1.4em;
+ }
+
+
 
   .edit-ingressos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-    margin-left: 3em;
+    gap: 20px;
 
   }
+
+@media (max-width: 768px) {
+  .edit-ingressos{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
   .fundo {
-    background: linear-gradient(rgb(86, 0, 147), rgb(119, 60, 162));
-    height: 100%;
+    background: url('../img/stars.png');
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
     align-items: center;
+
     
 }
-.fundo-ingresso{
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  border: 1px solid whitesmoke;
-}
-
 
 input[type=radio]{
-  margin-right: 1em;
   height: 15px;
   width: 15px;
 }
 .input-form{
   gap: 5px;
   color: white;
+  flex-direction: column;
+    margin-left: 3em;
 }
 
-@media (max-width: 640px) {
-  .input-form{
-    flex-direction: column;
+@media (min-height: 840px) {
+  input[type=text]{
+    width: 300px;
+    height: 40px;
   }
 }
+@media (min-height: 900px) {
+  div.input-form label{
+    font-size: 2em !important;
+  }
+}
+
+
+
+.img-edit{
+  width: 99.999%;
+}
+
+
+
+  label.img-select {
+    width: 60% !important;
+  }  
+
+   
+
+        @media (max-height: 1024px) {
+            label.img-select {
+              width: 40% !important;
+            }  
+        }
+
+
+
+
+
+input[type="radio"] {
+  visibility: hidden;
+}
+
+label.img-select {
+display: block;
+margin-right: 1em;
+transition: 0.2s
+}
+
+
+
+input[type="radio"]:checked+label {
+  border: 5px solid;
+border-color: rgb(187, 0, 255);
+}
+
+
+ .response{
+  margin-bottom: 10em !important;
+ }
+
+ @media (min-height: 700px) {
+  .input-form{
+      margin-bottom: 15em !important;
+  }}
+ @media (min-height: 800px) {
+  .fundo{
+      height: 100vh !important;
+  }}
+
+  .texto-verde{
+    color: rgb(0, 255, 0);
+    text-decoration: underline
+  }
+
+  

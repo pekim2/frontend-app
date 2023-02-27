@@ -1,19 +1,15 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Home from './pages/Home'
-import Navbar from './layout/Navbar'
-import Footer from './layout/Footer'
-import Politica from './pages/Politica'
+import Ingresso from './pages/Ingresso'
+import Festival from './pages/Festival'
 
 function App() {
 
 return (
   <BrowserRouter>
-    <Navbar/>
       <Routes>
-        <Route path='/' end element={<Home />} />
-        <Route path='politica' element={<Politica />} />
+        <Route path='ingresso' element={<Ingresso />} />
+        <Route path='/' end element={<Festival />} />
       </Routes>
-    <Footer/>
   </BrowserRouter>
   );
 }

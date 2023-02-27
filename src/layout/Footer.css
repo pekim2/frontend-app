@@ -1,8 +1,26 @@
 
 .link-edit{
     text-decoration: none !important;
-    color: rgb(70, 13, 168) !important;
+    color: rgb(254, 254, 254) !important;
 }
-.link-edit:hover{
-    color: rgb(41, 6, 102) !important;
+
+.link-footer a{
+    text-decoration: none !important;
 }
+
+.borda-footer{
+    border: 3px solid;
+}
+/*afastamento do foote*/
+@media (min-width: 800px)
+{div.fixed-bottom div.row {
+    --bs-gutter-x: 8rem !important;
+}}
+@media (min-width: 1024px)
+{div.fixed-bottom div.row {
+    --bs-gutter-x: 15rem !important;
+}}
+@media (min-width: 1280px)
+{div.fixed-bottom div.row {
+    --bs-gutter-x: 20rem !important;
+}}

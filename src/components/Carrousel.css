@@ -1,0 +1,10 @@
+.fundo-fest {
+    background: url('../img/stars.png');
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 100vh !important;
+
+    
+}
