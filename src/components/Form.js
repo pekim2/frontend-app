@@ -38,9 +38,9 @@ const handleShowTicket = () => {
 
 //Get nos ingressos
 useEffect(() => {
-Axios.get("http://localhost:8800/ingresso")
+Axios.get("http://localhost:3344/ingresso")
 .then((response) => {
-  setIngressos(response.data.data);
+  setIngressos(response.data);
 })
 .catch((error) => {
   console.log(error)
@@ -48,14 +48,14 @@ Axios.get("http://localhost:8800/ingresso")
 }, [])
 
 
-//Get no ingresso id
+//GET NO INGRESSO ID
 
-const {id} = useParams()
+const {id} = useParams();
 
 useEffect(() => {
-  Axios.get(`http://localhost:8800/ingresso/${id}`)
+  Axios.get(`http://localhost:3344/ingresso/` + {id})
   .then((response) => {
-    setIngressoId(response.data.data);
+    console.log(response.data);
   })
   .catch((error) => {
     console.log(error)
@@ -89,7 +89,7 @@ return(
                 return(
                   <div className='d-flex justify-content-center' key={key}>
             <input type="radio" name="id_ingresso" id={`id-select${ingresso.id}`} className='img-select' value={ingresso.id} {...register('id_ingresso')}/>
-            <label htmlFor={`id-select${ingresso.id}`} onClick={handleShowTicket} className='img-select'><img src={ingresso.foto_disponivel} className='img-edit' alt={`Ingresso disponível do ${ingresso.tipo_ingresso}`}/></label>
+            <label htmlFor={`id-select${ingresso.id}`} onClick={handleShowTicket} className='img-select'><img src={ingresso.foto_disponivel} className='img-edit' alt={`Ingresso disponível do ${ingresso.nome}`}/></label>
                   </div>
               )})}
           </div>
@@ -110,7 +110,7 @@ return(
         return(
           <div key={key}>
        {showTicket && <div><p className='d-flex justify-content-center texto-verde pt-5 mt-2'>Ingresso selecionado!</p>
-       <img src={foto.foto} className='img-edit' alt={`Ingresso disponível`}/>
+       <img src={foto.foto_disponivel} className='img-edit' alt={`Ingresso disponível`}/>
        </div>}
        </div>
 )})}

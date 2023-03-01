@@ -1,15 +1,19 @@
 import Carrousel from '../components/Carrousel'
+import CounterApp from '../components/contador/index'
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
 
 
 function Festival(){
 return(
-    <div>
+    <>
+     <section className='fundo-fest'>
     <Navbar/>
-    <Carrousel/>
+        <Carrousel/>
+        <CounterApp />
     <Footer/>
-    </div>
+     </section>
+    </>
 )
 
 

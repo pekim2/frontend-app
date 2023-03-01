@@ -7,9 +7,8 @@ import '../components/Carrousel.css'
 
 function Carrousel(){
     return(
-        <div className='fundo-fest'>
-            <div>
-            <h1 className='text-white d-flex justify-content-center mb-3'>Eventos</h1>
+            <div className='carousel-container'>
+            <h1 className='text-white d-flex justify-content-center my-3'>Shows</h1>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -32,7 +31,6 @@ function Carrousel(){
           </button>
         </div>
         </div>
-    </div>
         
         )
 }

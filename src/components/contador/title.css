@@ -1,0 +1,7 @@
+.title {
+    transform: rotateX(2deg) rotateY(6deg) rotateZ(0deg);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: white;
+}
