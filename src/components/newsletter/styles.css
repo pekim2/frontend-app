@@ -10,18 +10,19 @@
     text-align: center; 
 }
 
-.newsletter button:hover {
-    background-color: green;
-    transition: ease-in-out 2s;
+.form-box button:hover {
+    background-color: green !important;
+    transition: ease-in-out 1.5s !important;
 }
 
 .form-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-box button {
-    width: 100%;
+    padding: 2px
 }
 
 .form-box input {
@@ -42,8 +43,16 @@
     flex-direction: column;
     height: 30vh;
     color: white;
-    font-size: 2rem;
+    font-size: 1rem;
     margin-bottom: 105px;
+}
+
+.termos {
+    position: relative;
+}
+
+.termos input {
+    visibility: visible !important;
 }
 
 @media screen and (max-width: 768px) {

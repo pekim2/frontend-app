@@ -3,6 +3,7 @@ import CounterApp from '../components/contador/index'
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
 import Newsletter from '../components/newsletter/index'
+import Patrocinadores from '../components/patrocinadores'
 
 
 function Festival(){
@@ -12,6 +13,7 @@ return(
     <Navbar/>
         <CounterApp />
         <Carrousel/>
+        <Patrocinadores />
         <Newsletter />
     <Footer/>
      </section>

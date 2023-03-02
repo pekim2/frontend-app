@@ -7,39 +7,7 @@
   padding: 20px;
 }
 
-.world {
-  background-size:cover;
-  border:2px solid #000;
-  border-radius:50%;
-  width:200px;
-  height:200px;
-  animation: movimiento 5s linear 0s infinite;
-  box-shadow:0 0 25px RGBA(255,255,255, 0.10),
-             -8px -8px 15px #000 inset,
-             2px 2px 25px #000 inset,
-             -45px -45px 25px RGBA(0,0,0, 0.5) inset, 
-             25px 25px 45px RGBA(0,0,0, 0.45) ;
-  transform:rotateX(6deg) rotateY(6deg) rotateZ(6deg);
-}
-
-@keyframes movimiento {
-  0% { background-position:0 0 }
-  100% { background-position:355px 0 }
-}
-
-@keyframes stars {
-  0% { background-position:0 0 }
-  100% { background-position:0 100% }
-}
-
-.world-background {
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.world-background img {
+.astronautas {
 display: flex;
 align-items: center;
 justify-content: center;
@@ -73,45 +41,6 @@ animation: float 4s ease-in-out infinite;
   gap: 1rem;
 }
 
-/* .loader {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  font-size: 24px;
-  color: #fff;
-  letter-spacing: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-/* .loader::after {
-  content: '';
-  position: absolute;
-  top: -40px;
-  left: -40px;
-  right: -40px;
-  bottom: -40px;
-  border-radius: 50%;
-  background: url(../../assets/astronauta.png);
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: top;
-  border-top: 12px solid rgba(255, 255, 255, 0.2);
-  border-right: 12px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 12px solid rgba(255, 255, 255, 0.2);
-  border-left: 12px solid #fff;
-  transform: translateZ(0);
-  animation: load 10s infinite linear;
-} */
-/* @keyframes load {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
-
 @media screen and (max-width: 768px) {
   .Contador {
       display: flex;
@@ -128,8 +57,7 @@ animation: float 4s ease-in-out infinite;
     bottom: 0;
   }
 
-  .world-background img {
-      height:80vh;
-      display: none;
+  .astronautas {
+    display: none;
   }
 }
