@@ -1,6 +1,11 @@
 .error-message{
     color: red;
 }
+.quebra-cpf{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
 p {
   margin-bottom: .5em !important; /*consertar o scss*/

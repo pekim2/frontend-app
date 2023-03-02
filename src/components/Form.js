@@ -6,11 +6,12 @@ import * as yup from "yup";
 import Axios from 'axios';
 import './Form.css';
 import {useParams} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const validarPost = yup.object({
   nome_usuario: yup.string().required("O nome é obrigatório").min(3, "O nome precisa ter pelo menos 3 caracteres."),
-  cpf_usuario: yup.string().required("CPF é obrigatório.").max(15, "CPF inválido."),
-  email: yup.string().required("E-mail obrigatório."),
+  cpf_usuario: yup.string().required("CPF é obrigatório.").max(11, "CPF inválido! Somente números.").min(11, "CPF inválido."),
+  email: yup.string().required("E-mail obrigatório.").matches(/@[^.]*\./ , 'E-mail inválido'),
   id_ingresso: yup.string().required("Selecione seu ingresso!")
 })
 
@@ -18,6 +19,7 @@ const validarPost = yup.object({
 
 function Form(){
 
+let navigate = useNavigate();
 
 const [ingressos, setIngressos] = useState([]);
 const [ingressoId, setIngressoId] = useState([]);
@@ -53,14 +55,14 @@ Axios.get("http://localhost:3344/ingresso")
 const {id} = useParams();
 
 useEffect(() => {
-  Axios.get(`http://localhost:3344/ingresso/` + {id})
+  Axios.get(`http://localhost:3344/ingresso/`)
   .then((response) => {
-    console.log(response.data);
+    setIngressoId(response.data);
   })
   .catch((error) => {
     console.log(error)
   })
-  }, [id])
+  }, [])
 
 
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -73,8 +75,12 @@ useEffect(() => {
 
 
 const addPurchase = (data) => {
-console.log(data);
-toast.success('Ingresso comprado com sucesso! As informações chegarão em seu e-mail em breve.');
+  Axios.post('http://localhost:3344/pedido_ingresso', data)
+  .then(() => {
+    navigate('/')
+    toast.success('Ingresso comprado com sucesso! As informações chegarão em seu e-mail em breve.');
+
+})
 }
 
 return(
@@ -102,15 +108,17 @@ return(
             {!showContent && <button className='botao-edit' onClick={handleShowContent}>Avançar</button>}
 
 
+
+
             {showContent && 
             <div className='d-flex input-form justify-content-center align-items-center me-5'>
        
        <h1 className='text-center text-white my-5 pt-5'>Preencha as informações!</h1>
-      {ingressoId.map((foto, key)=> { 
+      {ingressoId.map((ingresso, key)=> { 
         return(
           <div key={key}>
        {showTicket && <div><p className='d-flex justify-content-center texto-verde pt-5 mt-2'>Ingresso selecionado!</p>
-       <img src={foto.foto_disponivel} className='img-edit' alt={`Ingresso disponível`}/>
+       <img src={ingresso.foto} className='img-edit' alt={`Ingresso disponível`}/>
        </div>}
        </div>
 )})}
@@ -133,7 +141,7 @@ return(
        name='cpf_usuario' 
        placeholder='Insira seu CPF' 
        {...register('cpf_usuario')}/>
-       <p className='error-message'>{errors.cpf_usuario?.message}</p>
+       <p className='error-message quebra-cpf'>{errors.cpf_usuario?.message}</p>
     
     
        <label htmlFor='email'>E-mail:</label>
