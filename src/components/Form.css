@@ -50,8 +50,8 @@ input {
 
   .edit-ingressos {
     display: grid;
+    row-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
 
   }
 
@@ -104,7 +104,7 @@ input[type=radio]{
 
 
 
-  label.img-select {
+  /* label.img-select {
     width: 60% !important;
   }  
 
@@ -114,7 +114,7 @@ input[type=radio]{
             label.img-select {
               width: 40% !important;
             }  
-        }
+        } */
 
 
 

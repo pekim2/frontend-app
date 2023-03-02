@@ -9,7 +9,7 @@ function Carrousel(){
     return(
             <div className='carousel-container'>
             <h1 className='text-white d-flex justify-content-center my-3'>Shows</h1>
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleAutoplaying" style={{ marginBottom: 50}} class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src={Day1} class="d-block w-100" alt="Show no dia 1 com o cantor Ferrugem"/>
